@@ -1,0 +1,280 @@
+html, body{
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(-45deg, #4158D0, #e560dc, #ffb374, #ef5f5f, #d840b6);
+    background-size: 400% 400%;
+    animation: bg 12s ease infinite;
+    overflow-x: hidden;
+
+}
+
+@keyframes bg {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}
+
+.slider-3d {
+    width: 300px;
+    height: 200px;
+    margin: 40px auto;
+    perspective: 1000px;
+}
+
+.slides {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.slides{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate3d 12s infinite linear;
+}
+
+.slides img {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.slides img:nth-child(1){
+    transform: rotateY(0deg) translateZ(400px);
+}
+.slides img:nth-child(2){
+    transform: rotateY(120deg) translateZ(400px);
+}
+.slides img:nth-child(3){
+    transform: rotateY(240deg) translateZ(400px);
+}
+
+@keyframes rotate3d{
+    from{ 
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-left: 4px solid #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+ul li:hover{
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateX(10px);
+    border-left-color: #00ffe1;
+}
+
+/* 1. Estilo da secção Spotify para alinhar tudo */
+.spotify {
+    text-align: center;      /* Centraliza o botão e o iframe */
+    margin: 30px auto;       /* Dá espaço em cima/baixo e centraliza na página */
+    max-width: 500px;        /* Impede que fique muito largo em monitores grandes */
+    padding: 0 20px;         /* Margem de segurança nas laterais p/ celular */
+}
+
+/* 2. O container do botão (para dar espaço do player) */
+.container-botao {
+    margin-bottom: 20px;     /* Empurra o player do Spotify para baixo */
+}
+
+/* 3. O Botão Estilizado (Com Transparência) */
+.btn-destaque {
+    /* Aqui mudamos para RGBA. O último número (0.6) é a transparência (60% visível) */
+    background: linear-gradient(45deg, rgba(255, 0, 127, 0.4), rgba(106, 13, 173, 0.4));
+    
+    /* Para garantir que o texto continua legível, adicionei uma sombra nele */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3); 
+    
+    color: #fff;             /* Texto branco */
+    padding: 12px 35px;      /* Tamanho do botão */
+    border-radius: 30px;     /* Bordas redondas */
+    text-decoration: none;   /* Tira o sublinhado do link */
+    font-weight: bold;       /* Letra mais grossa */
+    font-size: 1.1rem;       /* Tamanho da fonte */
+    
+    /* Sombra da caixa mais suave para combinar com a transparência */
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.2); 
+    
+    transition: all 0.3s ease; /* Animação suave */
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Uma bordinha fina para destacar */
+}
+
+/* 4. Efeito ao passar o mouse (Hover) */
+.btn-destaque:hover {
+    transform: scale(1.05);  /* Aumenta um pouquinho */
+    
+    /* Quando passa o mouse, ele fica um pouco mais sólido (0.8) para destacar */
+    background: linear-gradient(45deg, rgba(255, 0, 127, 0.8), rgba(106, 13, 173, 0.8));
+    
+    box-shadow: 0 6px 20px rgba(106, 13, 173, 0.4); /* Sombra mais forte */
+    cursor: pointer;
+    border-color: rgba(255, 255, 255, 0.5); /* Borda fica mais forte */
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.9s; }
+.delay-2 {animation-delay: 0.3s;}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Estilo da barra inteira */
+header {
+    background-color: #000; /* Fundo preto */
+    padding: 15px 30px;     /* Espaçamento interno */
+}
+
+.barra-navegacao {
+    display: flex;              /* Alinha os itens lado a lado */
+    justify-content: space-between; /* Joga o menu p/ esquerda e o Insta p/ direita */
+    align-items: center;        /* Centraliza verticalmente */
+}
+
+/* Estilo da lista de links */
+.menu-links {
+    display: flex;
+    gap: 20px;          /* Espaço entre Início, Sobre, etc */
+    list-style: none;   /* Remove as bolinhas */
+    margin: 0;
+    padding: 0;
+}
+
+.menu-links a {
+    color: white !important;       /* Cor do texto */
+    text-decoration: none; /* Tira o sublinhado */
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* Estilo do botão do Instagram */
+.botao-insta {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white; /* Borda branca fina */
+    padding: 8px 16px;
+    border-radius: 20px;     /* Borda arredondada */
+    transition: 0.3s;        /* Efeito suave */
+}
+
+.botao-insta:hover {
+    background-color: white;
+    color: black;
+}
+
+.redes-sociais{
+    display: flexbox;
+    gap: 15px;
+    align-items: center;
+}
+
+
+body{ 
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* 1. O Título Principal */
+h1 {
+    font-size: 2.2rem;       /* Tamanho bem grande */
+    text-transform: uppercase; 
+    font-weight: 900;        /* Negrito pesadão */
+    margin-bottom: 15px;     /* Espaço para o subtítulo */
+    line-height: 1.1;        /* Letras mais juntas verticalmente */
+}
+
+/* 2. O Subtítulo (Aquele texto "Este site é dedicado...") */
+h4 {
+    font-size: 1.1rem;       /* Menor que o título */
+    text-transform: uppercase; /* Mantém maiúsculo para combinar com o título */
+    font-weight: 600;        /* Negrito médio (não tão pesado quanto o H1) */
+    opacity: 0.8;            /* Levemente transparente para não brigar com o H1 */
+    margin-bottom: 25px;     /* Dá um respiro bom antes de começar o texto */
+    line-height: 1.4;
+}
+
+/* 3. O Texto Corrido (Biografia) */
+p {
+    font-size: 1rem;         /* Tamanho padrão de leitura */
+    text-transform: none;    /* Letras normais (maiúscula só no começo) */
+    font-weight: 400;        /* Peso normal */
+    line-height: 1.6;        /* Espaço entre linhas para leitura fácil */
+    opacity: 0.9;
+    margin-bottom: 15px;     /* Espacinho entre os parágrafos */
+}
+
+
+/* Estilizando as frases lá de baixo */
+.container-frases p, .frase-info {
+    background: rgba(255, 255, 255, 0.1); /* Fundo branco bem clarinho */
+    backdrop-filter: blur(10px);          /* Efeito de vidro fosco */
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+/* Ajustes para Celular */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem; /* Diminui um pouco o título no celular */
+    }
+    
+    .barra-navegacao {
+        flex-direction: column; /* No celular, o menu e o insta ficam um embaixo do outro */
+        gap: 10px;
+    }
+    
+    .container {
+        padding: 10px; /* Menos margem lateral no celular para ganhar espaço */
+    }
+}
