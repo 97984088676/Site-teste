@@ -4,7 +4,7 @@ html, body{
 
 body {
     margin: 0;
-    background: linear-gradient(-45deg, #4158D0, #e560dc, #ffb374, #ef5f5f, #d840b6);
+    background: linear-gradient(-45deg, #E63946, #F77F00, #F1C40F, #2ECC71, #3498DB);
     background-size: 400% 400%;
     animation: bg 12s ease infinite;
     overflow-x: hidden;
@@ -147,6 +147,10 @@ ul li:hover{
 
 .delay-1 { animation-delay: 0.9s; }
 .delay-2 {animation-delay: 0.3s;}
+.delay-3 {animation-delay: 0.10s;}
+.delay-4 {animation-delay: 0.9s;}
+.delay-5 {animation-delay: 0.10s;}
+.delay-6 {animation-delay: 0.9s;}
 
 @keyframes fadeUp {
   to {
@@ -277,4 +281,79 @@ p {
     .container {
         padding: 10px; /* Menos margem lateral no celular para ganhar espaço */
     }
+}
+
+.imagem {
+    display: block ;
+    margin: 0 auto;
+    width: 280px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: aparecer 1.5s ease forwards;
+}
+
+/* delays */
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 1s; }
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fan-carrossel{
+    text-align: center;
+    padding: 40px 0;
+}
+
+.carrossel{
+    --w: 600px;
+    width: var(--w);
+    margin: 0 auto;
+    overflow: hidden;
+    /*border-radius: 16px;*/
+    /*box-shadow: 0 20px 40px rgba(0,0,0,0.5);*/
+}
+
+.track{
+    display: flex;
+    width: calc(var(--w) * 4);
+    animation: slide 12s infinite ease-in-out;
+}
+
+.carrossel:hover .track {
+    -animation-play-state: paused;
+}
+
+.track img{
+    width: calc(var(--w));
+    height: 420px;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: transform .5s;
+}
+
+.track img:hover {
+    width: var(--w);
+    height: 420px;
+    object-fit: cover;
+    flex-shrink: 0;
+    /*transform: scale(1.05);*/
+}
+
+@keyframes slide {
+    0% {transform: translateX(0); }
+    25%{transform: translateX(calc(var(--w)* -1)); }
+    50%{transform: translateX(calc(var(--w)* -2)); }
+    75%{transform: translateX(calc(var(--w)* -3)); }
+    100%{transform: translateX(0); }
+} 
+
+h3{
+    text-align: center;
 }
