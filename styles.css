@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 html, body{
     min-height: 100%;
 }
@@ -8,6 +13,7 @@ body {
     background-size: 400% 400%;
     animation: bg 12s ease infinite;
     overflow-x: hidden;
+    box-sizing: border-box;
 
 }
 
@@ -355,5 +361,62 @@ p {
 } 
 
 h3{
+    text-align: center;
+}
+
+.titulo-blog {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(45deg, #000000, #FFD93B, #D2691E, #000000, #9D4EDD);
+    animation: gradientAnimation 10s ease infinite; 
+    background-size: 400% 400%;
+    overflow: hidden;
+    text-align: center;
+}
+
+@keyframes gradientAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/*p{
+    margin: 10px;
+    border: 2px solid black;
+    padding: 5px;
+}*/
+
+.paragrafo-um {
+    text-align: center;
+    margin:5%;
+}
+
+.titulo-dois{
+    text-align: center;
+}
+
+.sobre-veigh{
+    text-align: center;
+    margin: 5%;
+}
+
+.discografia-veigh{
+    text-align: center;
+    margin: 5%;
+}
+
+.ouca-veigh{
+    text-align: center;
+    margin: 5%;
+}
+
+.curiosidades-lista {
+    list-style-position: inside;
+    text-align: center;
+    padding: 0;
+}
+
+h2{
     text-align: center;
 }
