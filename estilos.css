@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
+:root{
+    --cor-principal: #4D2B8C;
+    --cor-secundaria: #FFEF5F;
+    --cor-terciaria: #EEA727;
+    --cor-hover: #85409D;
+
+    --fonte-principal: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
 
 * {
     margin: 0;
@@ -7,14 +16,14 @@
 }
 
 body{
-    height: 100vh;
-    background-color: black;
-    color: white; 
+    /* height: 100vh; */
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria); 
     box-sizing: border-box;
 }
 
 .titulo-destaque {
-    color: aqua;
+    color: var(--cor-terciaria);
 }
 h1 {
     font-weight: bold;
@@ -24,7 +33,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10% 15%;
+    padding: 5% 15%;
 }
 
 .apresentacao-conteudo {
@@ -36,29 +45,77 @@ h1 {
 
 .apresentacao-conteudo-titulo{
     font-size: 36px;
-    font-family: 'Krona One', sans-serif;
+    font-family: var(--fonte-principal);
 }
 
 .texto{
     font-size:24px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--fonte-secundaria);
 }
 
 .links{
     display: flex;
     justify-content: space-between;
+    flex-direction: column; /*alinha os itens em coluna*/
+    align-items: center; /*centraliza os itens no eixo horizontal*/
+    gap: 32px; /*espaçamento entre os itens*/
 }
 
 .link{
-    background-color: #22D4FD;
-    width: 280px;
+    /* background-color: #22D4FD; */
+    display: flex; /*transforma a tag em um container flexível*/
+    justify-content: center; /*centraliza o conteúdo no eixo horizontal*/
+    gap: 16px; /*espaçamento entre o ícone e o texto*/
+    width: 378px;
     text-align: center;
-    border-radius: 16px;
+    border-radius: 8px;
     font-size: 24px;
     font-weight: 600px;
     padding: 21.5px 0;
     text-decoration: none;
-    color: black;
-    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    border: 2px solid var(--cor-terciaria); /*bordas do link*/
 
+} 
+
+.subtitulo{
+    font-family: var(--fonte-principal);
+    font-weight: 400; /*normal*/
+    font-size: 24px;
+}
+
+.link:hover {
+    background-color: var(--cor-hover); /*cor de fundo ao passar o mouse*/
+    padding: 3%; /*aumenta o padding para dar efeito de "crescer"*/
+    cursor: pointer; /*muda o cursor para indicar que é clicável*/
+    background-color: #272727; /*cor de fundo ao passar o mouse*/
+}
+
+.rodape { 
+    color: var(--cor-principal);
+    background-color: var(--cor-terciaria);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--font-secundaria);
+    font-size: 24px;
+    font-weight: 400; /*normal*/
+}
+
+.navegacao-link{
+    font-family: var(--fonte-secundaria);
+    font-size: 24px;
+    font-weight: 600; /*negrito*/
+    color: var(--cor-terciaria);
+    text-decoration: none; /*remove o sublinhado*/
+}
+
+.cabecalho{
+    padding: 2% 0 0 15%; /*espaçamento interno*/
+
+}
+
+.navegacao{
+    display: flex;
+    gap: 80px; /*espaçamento entre os links*/
 }
